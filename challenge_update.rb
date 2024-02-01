@@ -1,5 +1,3 @@
-# challenge_update.rb
-
 require_relative 'ar'
 require_relative 'models/product'
 

@@ -2,7 +2,7 @@ require_relative 'ar'
 require_relative 'models/product'
 
 # Backup the development database
-system("cp db/development.sqlite3 db/development_backup.sqlite3")
+system("cd db/development.sqlite3 db/development_backup.sqlite3")
 
 # Find any product from the database
 product = Product.second
@@ -41,14 +41,6 @@ if product
       stock_quantity: 10
     )
 
-    # Persist the new product to the database
-    if new_product.save
-      puts "New product '#{new_product.name}' associated with category '#{category.name}' has been created."
-    else
-      puts "Failed to create the new product."
-    end
-  else
-    puts "Category with id = 1 not found."
   end
 
   # Find a specific category (let's say we want to find products associated with the category with id = 1)
